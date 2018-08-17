@@ -1,0 +1,19 @@
+  <ion-content padding>
+    <form >
+      <ion-list>
+        <ion-item>
+          <ion-input type="text" placeholder="Number of requests to perform"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="email" placeholder="Email" [ngModelOptions]="{standalone: true}" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" placeholder="password" [ngModelOptions]="{standalone: true}" [(ngModel)]="password"></ion-input>
+        </ion-item>
+      </ion-list>
+    </form>
+    <span>
+      <ion-button color="primary" (click) ="doLogin()"  expand ='block'>Register</ion-button>
+      <ion-button color="primary" expand ='block'>Login</ion-button>
+    </span>
+  </ion-content>

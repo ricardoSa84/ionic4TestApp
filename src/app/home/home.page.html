@@ -1,12 +1,12 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+
+    <H5 style="text-align: center">Routine tasks</H5>
+    <ion-button block [routerLink]="['/LoginRegister']" color="primary" expand ='block'>Login/Register</ion-button>
+    <ion-button block [routerLink]="['/LoadImageFromDisk']" color="primary" expand ='block'>Load image from disk</ion-button>
+    <ion-button block [routerLink]="['/LoadImageFromNetwork']" color="primary" expand ='block'>Load image from network</ion-button>
+    <h5 style="text-align: center">Performance related tasks</h5>
+    <ion-button block [routerLink]="['/CPUIntensive']" color="primary" expand ='block'>CPU intensive task ST</ion-button>
+    <ion-button block [routerLink]="['/CPUIntensive']" color="primary" expand ='block'>CPU intensive task MT</ion-button>
+    <ion-button block [routerLink]="['/MemoryManagement']" color="primary" expand ='block'>Memory management</ion-button>
+    <ion-button block [routerLink]="['/NetworkRequests']" color="primary" expand ='block'>Network requests</ion-button>
 </ion-content>
