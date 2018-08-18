@@ -1,0 +1,19 @@
+<ion-content padding>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label>{{status}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Number of images to load" [(ngModel)]="numberOfTimes" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+  <span>
+    <ion-button color="primary" (click)="loadImages()" expand='block'>Load Images</ion-button>
+  </span>
+  <div *ngFor="let imagePath of imagePaths">
+    <img [src]="[imagePath]" (load)="imageFinishedLoading()">
+  </div>
+
+</ion-content>
