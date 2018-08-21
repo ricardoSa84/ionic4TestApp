@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HttpModule } from  '@angular/http';
+import { WebWorkerService } from  'ngx-web-worker';
 
 import {RestService} from './rest.service'
 
@@ -21,7 +22,8 @@ import {RestService} from './rest.service'
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    RestService
+    RestService,
+    WebWorkerService
   ],
   bootstrap: [AppComponent]
 })
