@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'LoadImage/:local', loadChildren: './load-image/load-image.module#LoadImagePageModule' },
   { path: 'CPUIntensive/:single', loadChildren: './cpuintensive/cpuintensive.module#CPUIntensivePageModule' },
   { path: 'MemoryManagement', loadChildren: './memory-management/memory-management.module#MemoryManagementPageModule' },
+  { path: 'MemoryManagement/:counter/:start', loadChildren: './memory-management/memory-management.module#MemoryManagementPageModule' },
   { path: 'NetworkRequests', loadChildren: './network-requests/network-requests.module#NetworkRequestsPageModule' },
 ];
 
