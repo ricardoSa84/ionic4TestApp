@@ -8,9 +8,9 @@ import { Headers, RequestOptions } from "@angular/http";
   styleUrls: ["./login-register.page.scss"]
 })
 export class LoginRegisterPage implements OnInit {
-  public email: any = "jose@a.aa";
+  public email: any = "admin@a.aa";
   public password: any = "123qweASD";
-  public numberOfTimes: any = 1;
+  public numberOfTimes: any = 50;
   public status = "";
   private requestsMade = 0;
 
@@ -20,11 +20,7 @@ export class LoginRegisterPage implements OnInit {
     "Accept-Version": "1.0.0"
   });
 
-  private data = {
-    email: "",
-    password: "",
-    name: ""
-  };
+  
 
   constructor(private restService: RestService) {}
 
@@ -32,25 +28,27 @@ export class LoginRegisterPage implements OnInit {
 
   callAPI(register) {
     var start = Date.now();
-    this.data.email = this.email;
-    this.data.password = this.password;
     this.requestsMade = 0;
     this.status = "Processing please wait";
     let options = new RequestOptions({ headers: this.headers });
-    console.log("in call api");
     for (var i = 0; i < this.numberOfTimes; i++) {
+      var data = {
+        email: "",
+        password: "",
+        name: ""
+      };
+      data.email = this.email;
+      data.password = this.password;
       if (register) {
-        var split = this.data.email.split("@");
-        this.data.email = split[0] + i + "@" + split[1];
-        console.log("email:", this.data.email);
+        var split = this.email.split("@");
+        data.email = split[0] + i + "@" + split[1];
       }
-      this.data.name = "testName";
-      console.log("Data: ", this.data);
+      data.name = "testName";
       this.restService
-        .doPost(register ? "/register" : "/login", this.data, options)
+        .doPost(register ? "/register" : "/login", data, options)
         .then(response => {
           this.requestsMade++;
-          if (this.requestsMade === this.numberOfTimes) {
+          if (this.requestsMade.toString() === this.numberOfTimes) {
             this.status = "Process finished in " + (Date.now() - start) + "ms";
           }
         });

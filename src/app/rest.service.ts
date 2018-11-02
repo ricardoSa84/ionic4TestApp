@@ -12,7 +12,7 @@ export class RestService {
     return new Promise((resolve, reject) => {
       this.http
         .post(
-          "https://vitasenior-test.eu-gb.mybluemix.net" + url,
+          "https://vitasenior.eu-gb.mybluemix.net" + url,
           params,
           options
         )
@@ -29,7 +29,7 @@ export class RestService {
   doGet(url, options) {
     return new Promise((resolve, reject) => {
       this.http
-        .get("https://vitasenior-test.eu-gb.mybluemix.net" + url, options)
+        .get("https://vitasenior.eu-gb.mybluemix.net" + url, options)
         .toPromise()
         .then(response => {
           resolve(response.json());

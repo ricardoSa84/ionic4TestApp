@@ -40,7 +40,6 @@ export class NetworkRequestsPage implements OnInit {
     this.status = "Processing please wait";
     let options = new RequestOptions({ headers: new Headers(this.headers) });
     this.restService.doPost("/login", this.data, options).then(response => {
-      console.log(response);
       this.headers.Authorization = response["token"];
       options = new RequestOptions({ headers: new Headers(this.headers) });
       for (var i = 0; i < this.numberOfTimes; i++) {
